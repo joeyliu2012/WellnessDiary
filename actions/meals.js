@@ -1,13 +1,16 @@
 const uuid = require('an-uuid')
 const { ADD_MEAL, EDIT_MEAL, DELETE_MEAL } = require('../constants/action-types')
 
-function addMeal(description) {
+function addMeal(description, imagePath) {
   return {
     type: ADD_MEAL,
     payload: {
       meal: {
-        id: uuid(),
         description,
+        id: uuid(),
+        image: {
+          src: imagePath,
+        },
       },
     },
   }
@@ -35,4 +38,5 @@ function deleteMeal(id) {
 module.exports = {
   addMeal,
   editMeal,
+  deleteMeal,
 }

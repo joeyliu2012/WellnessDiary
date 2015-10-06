@@ -7,9 +7,11 @@ const {
   TextInput,
   TouchableHighlight,
   View,
+  Image,
 } = React
 
 const { connect } = require('react-redux/native')
+const { deleteMeal } = require('../actions/meals')
 
 class MealsList extends Component {
   constructor(props) {
@@ -24,6 +26,7 @@ class MealsList extends Component {
     }
 
     this.renderMealRow = this.renderMealRow.bind(this)
+    this.handleMealPress = this.handleMealPress.bind(this)
   }
 
   componentWillReceiveProps(props) {
@@ -36,10 +39,23 @@ class MealsList extends Component {
     })
   }
 
+  handleMealPress(id) {
+    return () => {
+      this.props.deleteMeal(id)
+    }
+  }
+
+  renderMealImage(src) {
+    return <Image style={styles.mealImage} source={{uri: src}} />
+  }
+
   renderMealRow(meal) {
     return (
       <View style={styles.mealRow}>
-        <Text style={styles.mealDescription}>{meal.description}</Text>
+        <TouchableHighlight onPress={this.handleMealPress(meal.id)}>
+          <Text style={styles.mealDescription}>{meal.description}</Text>
+        </TouchableHighlight>
+        {meal.image && meal.image.src && this.renderMealImage(meal.image.src)}
       </View>
     )
   }
@@ -63,9 +79,14 @@ const styles= StyleSheet.create({
   },
   mealDescription: {
     fontSize: 18,
-  }
+  },
+  mealImage: {
+    height: 100,
+    width: 100,
+  },
 })
 
 module.exports = connect(
-  (state) => state.meals
+  (state) => state.meals,
+  { deleteMeal }
 )(MealsList)

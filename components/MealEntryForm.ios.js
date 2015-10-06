@@ -9,6 +9,8 @@ const {
   View,
 } = React
 
+const Camera = require('react-native-camera')
+
 const { connect } = require('react-redux/native')
 const { addMeal } = require('../actions/meals')
 
@@ -23,14 +25,26 @@ class MealEntryForm extends Component {
   }
 
   handleSubmit() {
-    this.props.addMeal(this.state.text)
-    this.setState({text: null})
-    this.props.navigator.pop()
+    const description = this.state.text
+    this.refs.cam.capture((err, imagePath) => {
+      this.props.addMeal(description, imagePath)
+      this.props.navigator.pop()
+    })
+    // this.setState({text: null})
   }
 
   render() {
     return (
       <View style={{flex: 1, paddingTop: 40}}>
+        <Camera
+          ref="cam"
+          type={Camera.constants.Type.back}
+          style={{
+            width: 100,
+            height: 100,
+          }}
+          captureTarget={Camera.constants.CaptureTarget.disk}
+        />
         <TextInput
           style={styles.input}
           placeholder="What did you have to eat?"
@@ -40,7 +54,7 @@ class MealEntryForm extends Component {
         <TouchableHighlight
           onPress={this.handleSubmit}
         >
-          <Text>Add Meal</Text>
+          <Text ref="test">Add Meal</Text>
         </TouchableHighlight>
       </View>
     )

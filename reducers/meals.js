@@ -14,10 +14,8 @@ module.exports = function meals(state = {
       }
     }
   case DELETE_MEAL:
-    return {
-      meals: Object.keys(state.meals).filter((key) => key !== action.id)
-                                     .reduce((acc, key) => acc[key] = state.meals[key], {})
-  }
+    // TODO: Implement delete
+    return state
   default:
     return state
   }
