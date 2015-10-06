@@ -7,6 +7,12 @@ const { Provider } = require('react-redux/native')
 const configureStore = require('./store/configureStore')
 const store = configureStore()
 
+
+const { fetchAuthToken } = require ('./actions/auth')
+
+window.store = store
+window.fetchAuthToken = fetchAuthToken
+
 const App = require('./components/App')
 
 class WellnessDiary extends Component {

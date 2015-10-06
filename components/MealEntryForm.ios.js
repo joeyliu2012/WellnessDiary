@@ -10,9 +10,9 @@ const {
 } = React
 
 const { connect } = require('react-redux/native')
-const { addTodo } = require('../actions/todos')
+const { addMeal } = require('../actions/meals')
 
-class TodoInput extends Component {
+class MealEntryForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,23 +23,24 @@ class TodoInput extends Component {
   }
 
   handleSubmit() {
-    this.props.addTodo(this.state.text)
+    this.props.addMeal(this.state.text)
     this.setState({text: null})
+    this.props.navigator.pop()
   }
 
   render() {
     return (
-      <View>
+      <View style={{flex: 1, paddingTop: 40}}>
         <TextInput
           style={styles.input}
-          placeholder="Enter a todo"
+          placeholder="What did you have to eat?"
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
         <TouchableHighlight
           onPress={this.handleSubmit}
         >
-          <Text>Add Todo</Text>
+          <Text>Add Meal</Text>
         </TouchableHighlight>
       </View>
     )
@@ -54,5 +55,5 @@ const styles = StyleSheet.create({
 
 module.exports = connect(
   (state) => ({}),
-  { addTodo }
-)(TodoInput)
+  { addMeal }
+)(MealEntryForm)

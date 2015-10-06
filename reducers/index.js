@@ -1,6 +1,13 @@
 const { combineReducers } = require('redux')
-const todos = require('./todos')
+// const auth = require('./auth')
+// const requests = require('./requests')
+// const users = require('./users')
+const meals = require('./meals')
+
 
 module.exports = combineReducers({
-  todos,
+  // auth,
+  // requests,
+  // users,
+  meals,
 })

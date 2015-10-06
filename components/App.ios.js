@@ -2,19 +2,31 @@ const React = require('react-native')
 const {
   Component,
   View,
+  NavigatorIOS,
   StyleSheet,
 } = React
 
-const TodoInput = require('./TodoInput')
-const TodosList = require('./TodosList')
+const MealEntryForm = require('./MealEntryForm')
+const MealsList = require('./MealsList')
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <TodoInput />
-        <TodosList />
-      </View>
+      <NavigatorIOS
+        ref="navigator"
+        style={styles.container}
+        initialRoute={{
+          title: "Meals",
+          component: MealsList,
+          rightButtonTitle: "Add Meal",
+          onRightButtonPress: () => {
+            this.refs.navigator.push({
+              title: "Enter a meal",
+              component: MealEntryForm,
+            })
+          }
+        }}
+      />
     )
   }
 }
@@ -23,7 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 20,
-  }
+  },
 })
 
 module.exports = App
