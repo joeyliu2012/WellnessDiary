@@ -45,18 +45,15 @@ class MealsList extends Component {
     }
   }
 
-  renderMealImage(src) {
-    return <Image style={styles.mealImage} source={{uri: src}} />
-  }
-
   renderMealRow(meal) {
     return (
-      <View style={styles.mealRow}>
-        <TouchableHighlight onPress={this.handleMealPress(meal.id)}>
-          <Text style={styles.mealDescription}>{meal.description}</Text>
-        </TouchableHighlight>
-        {meal.image && meal.image.src && this.renderMealImage(meal.image.src)}
-      </View>
+      <Image
+        source={{uri: meal.image.src}}
+        style={styles.mealRow}
+        resizeMode="cover"
+      >
+        <Text style={styles.mealDescription}>{meal.description}</Text>
+      </Image>
     )
   }
 
@@ -74,15 +71,20 @@ class MealsList extends Component {
 const styles= StyleSheet.create({
   mealRow: {
     height: 150,
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
+    padding: 10,
   },
   mealDescription: {
-    fontSize: 18,
-  },
-  mealImage: {
-    height: 100,
-    width: 100,
+    fontSize: 20,
+    fontWeight: '500',
+    color: 'white',
+    backgroundColor: 'transparent',
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
   },
 })
 
