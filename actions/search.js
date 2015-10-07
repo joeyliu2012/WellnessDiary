@@ -1,4 +1,4 @@
-const { RESULTS_RECEIVED } = require('../constants/action-types')
+const { RESULTS_RECEIVED, CLEAR_SEARCH } = require('../constants/action-types')
 const makeApiRequest = require('./api')
 
 function resultsReceived(data) {
@@ -8,6 +8,12 @@ function resultsReceived(data) {
       query: data.list.q,
       results: data.list.item,
     },
+  }
+}
+
+function clearSearch() {
+  return {
+    type: CLEAR_SEARCH,
   }
 }
 
@@ -28,4 +34,5 @@ function queryUSDADatabase(q) {
 module.exports = {
   queryUSDADatabase,
   resultsReceived,
+  clearSearch,
 }

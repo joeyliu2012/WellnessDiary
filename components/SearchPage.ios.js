@@ -5,12 +5,13 @@ const {
   TextInput,
   ListView,
   Text,
+  StyleSheet,
 } = React
 
-const { debounce } = require('lodash')
+const SearchBar = require('react-native-search-bar')
 
 const { connect } = require('react-redux/native')
-const { queryUSDADatabase } = require('../actions/search')
+const { queryUSDADatabase, clearSearch } = require('../actions/search')
 
 class SearchPage extends Component {
   constructor(props) {
@@ -21,11 +22,16 @@ class SearchPage extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(props.results),
     }
-    this.initiateSearch = debounce(this.initiateSearch.bind(this), 250)
+    this.handleSearchButtonPress = this.handleSearchButtonPress.bind(this)
+    this.handleCancelButtonPress = this.handleCancelButtonPress.bind(this)
   }
 
-  initiateSearch(query) {
-    this.props.queryUSDADatabase(query)
+  handleSearchButtonPress(query) {
+    if (query) this.props.queryUSDADatabase(query)
+  }
+
+  handleCancelButtonPress() {
+    this.props.clearSearch()
   }
 
   componentWillReceiveProps(props) {
@@ -34,24 +40,51 @@ class SearchPage extends Component {
     })
   }
 
+  renderResultRow(result) {
+    return (
+      <View style={styles.resultRow}>
+        <Text style={styles.resultName}>{result.name}</Text>
+        <Text style={styles.resultGroup}>{result.group}</Text>
+      </View>
+    )
+  }
+
   render() {
     return (
-      <View style={{padding: 40}}>
-        <TextInput
-          style={{height: 40}}
+      <View style={{paddingTop: 20, flex: 1}}>
+        <SearchBar
           placeholder="Search USDA nutrition database..."
-          onChangeText={this.initiateSearch}
+          onSearchButtonPress={this.handleSearchButtonPress}
+          onCancelButtonPress={this.handleCancelButtonPress}
+          showsCancelButton={false}
         />
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(result) => <Text>{result.name}</Text>}
+          renderRow={this.renderResultRow}
         />
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  resultRow: {
+    height: 70,
+    padding: 10,
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
+    justifyContent: 'center',
+  },
+  resultName: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  resultGroup: {
+    fontSize: 12,
+  },
+})
+
 module.exports = connect(
   (state) => state.search,
-  { queryUSDADatabase }
+  { queryUSDADatabase, clearSearch }
 )(SearchPage)

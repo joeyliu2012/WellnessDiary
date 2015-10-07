@@ -23,6 +23,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		921F7A851BC4816B008767EB /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921F7A841BC47FFF008767EB /* libRCTCamera.a */; };
+		9221BCD31BC4BE5400E03A4B /* libRNSearchBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9221BCD21BC4BE4500E03A4B /* libRNSearchBar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,13 @@
 			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
 			remoteInfo = RCTCamera;
 		};
+		9221BCD11BC4BE4500E03A4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNSearchBar;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +135,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		921F7A7F1BC47FFF008767EB /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
+		9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSearchBar.xcodeproj; path = "../node_modules/react-native-search-bar/RNSearchBar.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9221BCD31BC4BE5400E03A4B /* libRNSearchBar.a in Frameworks */,
 				921F7A851BC4816B008767EB /* libRCTCamera.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -257,6 +267,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */,
 				921F7A7F1BC47FFF008767EB /* RCTCamera.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -304,6 +315,14 @@
 			isa = PBXGroup;
 			children = (
 				921F7A841BC47FFF008767EB /* libRCTCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9221BCCE1BC4BE4400E03A4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9221BCD21BC4BE4500E03A4B /* libRNSearchBar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,6 +412,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 9221BCCE1BC4BE4400E03A4B /* Products */;
+					ProjectRef = 9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -477,6 +500,13 @@
 			fileType = archive.ar;
 			path = libRCTCamera.a;
 			remoteRef = 921F7A831BC47FFF008767EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9221BCD21BC4BE4500E03A4B /* libRNSearchBar.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSearchBar.a;
+			remoteRef = 9221BCD11BC4BE4500E03A4B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
