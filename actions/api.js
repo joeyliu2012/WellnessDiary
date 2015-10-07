@@ -8,6 +8,7 @@ const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
 }
 
+                                    // This can change later for production
 const HOST = process.browser ? '' : 'http://localhost:3000'
 
 function startRequest(id) {
@@ -45,8 +46,10 @@ module.exports = function makeApiRequest(requestConfig, actionCreators, _data) {
     start && dispatch(start(REQUEST_ID))
     optimistic && dispatch(optimistic(_data, REQUEST_ID))
 
-    axios({
-      url: `${HOST}${requestConfig.url}`,
+    const url = requestConfig.url.indexOf('http') === -1 ? `${HOST}${requestConfig.url}` : requestConfig.url
+
+    request = axios({
+      url,
       method: requestConfig.method || 'get',
       params: requestConfig.method === 'get' ? _data : null,
       data: requestConfig.method !== 'get' ? _data : null,

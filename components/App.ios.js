@@ -8,26 +8,28 @@ const {
 
 const MealEntryForm = require('./MealEntryForm')
 const MealsList = require('./MealsList')
+const SearchPage = require('./SearchPage')
 
 class App extends Component {
   render() {
-    return (
-      <NavigatorIOS
-        ref="navigator"
-        style={styles.container}
-        initialRoute={{
-          title: "Meals",
-          component: MealsList,
-          rightButtonTitle: "Add Meal",
-          onRightButtonPress: () => {
-            this.refs.navigator.push({
-              title: "Enter a meal",
-              component: MealEntryForm,
-            })
-          }
-        }}
-      />
-    )
+    return <SearchPage />
+    // return (
+    //   <NavigatorIOS
+    //     ref="navigator"
+    //     style={styles.container}
+    //     initialRoute={{
+    //       title: "Meals",
+    //       component: MealsList,
+    //       rightButtonTitle: "Add Meal",
+    //       onRightButtonPress: () => {
+    //         this.refs.navigator.push({
+    //           title: "Enter a meal",
+    //           component: MealEntryForm,
+    //         })
+    //       }
+    //     }}
+    //   />
+    // )
   }
 }
 
