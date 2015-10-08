@@ -17,6 +17,7 @@ module.exports = () => {
   const store = finalCreateStore(reducer)
   persistStore(store, {
     storage: AsyncStorage,
+    blacklist: ['requests', 'search'],
   })
   return store
 }

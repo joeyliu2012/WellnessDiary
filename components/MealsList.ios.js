@@ -61,6 +61,7 @@ class MealsList extends Component {
     const { meals } = this.props
     return (
       <ListView
+        style={styles.container}
         dataSource={this.state.dataSource}
         renderRow={(id) => this.renderMealRow(meals[id])}
       />
@@ -69,6 +70,10 @@ class MealsList extends Component {
 }
 
 const styles= StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 40,
+  },
   mealRow: {
     height: 150,
     padding: 10,

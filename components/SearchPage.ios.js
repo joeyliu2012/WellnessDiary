@@ -3,6 +3,7 @@ const {
   Component,
   View,
   TextInput,
+  TouchableOpacity,
   ListView,
   Text,
   StyleSheet,
@@ -12,6 +13,7 @@ const SearchBar = require('react-native-search-bar')
 
 const { connect } = require('react-redux/native')
 const { queryUSDADatabase, clearSearch } = require('../actions/search')
+const { addMeal } = require('../actions/meals')
 
 class SearchPage extends Component {
   constructor(props) {
@@ -24,6 +26,7 @@ class SearchPage extends Component {
     }
     this.handleSearchButtonPress = this.handleSearchButtonPress.bind(this)
     this.handleCancelButtonPress = this.handleCancelButtonPress.bind(this)
+    this.renderResultRow = this.renderResultRow.bind(this)
   }
 
   handleSearchButtonPress(query) {
@@ -42,16 +45,27 @@ class SearchPage extends Component {
 
   renderResultRow(result) {
     return (
-      <View style={styles.resultRow}>
-        <Text style={styles.resultName}>{result.name}</Text>
-        <Text style={styles.resultGroup}>{result.group}</Text>
-      </View>
+      <TouchableOpacity
+        style={styles.resultRow}
+        onPress={() => {
+          this.props.addMeal(
+            result.name,
+            this.props.image
+          )
+          this.props.navigator.pop()
+        }}
+      >
+        <View>
+          <Text style={styles.resultName}>{result.name}</Text>
+          <Text style={styles.resultGroup}>{result.group}</Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 
   render() {
     return (
-      <View style={{paddingTop: 20, flex: 1}}>
+      <View style={{paddingTop: 60, flex: 1}}>
         <SearchBar
           placeholder="Search USDA nutrition database..."
           onSearchButtonPress={this.handleSearchButtonPress}
@@ -86,5 +100,5 @@ const styles = StyleSheet.create({
 
 module.exports = connect(
   (state) => state.search,
-  { queryUSDADatabase, clearSearch }
+  { queryUSDADatabase, clearSearch, addMeal }
 )(SearchPage)

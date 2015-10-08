@@ -30,7 +30,6 @@ class MealEntryForm extends Component {
       this.props.addMeal(description, imagePath)
       this.props.navigator.pop()
     })
-    // this.setState({text: null})
   }
 
   render() {
