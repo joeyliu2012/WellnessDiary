@@ -13,6 +13,8 @@ const {
 const { connect } = require('react-redux/native')
 const { deleteMeal } = require('../actions/meals')
 
+const { BlurView } = require('react-native-blur')
+
 class MealsList extends Component {
   constructor(props) {
     super(props)
@@ -52,7 +54,23 @@ class MealsList extends Component {
         style={styles.mealRow}
         resizeMode="cover"
       >
-        <Text style={styles.mealDescription}>{meal.description}</Text>
+        <View style={styles.blurView}>
+          <Text style={[styles.mealDescription, styles.mealText]}>{meal.description}</Text>
+          <View style={styles.mealDetailsView}>
+            <View style={styles.mealDetailRow}>
+              <Text style={[styles.mealDetailTitle, styles.mealText]}>Calories: </Text>
+              <Text style={styles.mealText}>500</Text>
+            </View>
+            <View style={styles.mealDetailRow}>
+              <Text style={[styles.mealDetailTitle, styles.mealText]}>Total Fat: </Text>
+              <Text style={styles.mealText}>9g</Text>
+            </View>
+            <View style={styles.mealDetailRow}>
+              <Text style={[styles.mealDetailTitle, styles.mealText]}>Total Carbohydrate: </Text>
+              <Text style={styles.mealText}>26g</Text>
+            </View>
+          </View>
+        </View>
       </Image>
     )
   }
@@ -74,22 +92,43 @@ const styles= StyleSheet.create({
     flex: 1,
     marginTop: 40,
   },
-  mealRow: {
-    height: 150,
+  blurView: {
+    flex: 1,
     padding: 10,
   },
-  mealDescription: {
-    fontSize: 20,
-    fontWeight: '500',
+  mealRow: {
+    height: 150,
+  },
+  mealText: {
     color: 'white',
     backgroundColor: 'transparent',
     shadowColor: 'black',
     shadowOffset: {
-      width: 2,
-      height: 2,
+      x: 1,
+      y: 1,
     },
+    shadowRadius: 1,
     shadowOpacity: 0.5,
-    shadowRadius: 3,
+  },
+  mealDescription: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: 'white',
+    backgroundColor: 'transparent',
+  },
+  mealDetailsView: {
+    height: 100,
+    marginTop: 10,
+    // alignSelf: 'flex-end',
+  },
+  mealDetailTitle: {
+    fontWeight: '500',
+    marginRight: 4,
+    color: 'black',
+  },
+  mealDetailRow: {
+    flexDirection: 'row',
+    // justifyContent: 'space-between',
   },
 })
 

@@ -24,6 +24,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		921F7A851BC4816B008767EB /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921F7A841BC47FFF008767EB /* libRCTCamera.a */; };
 		9221BCD31BC4BE5400E03A4B /* libRNSearchBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9221BCD21BC4BE4500E03A4B /* libRNSearchBar.a */; };
+		92C14FDD1BC720660000CD39 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C14FDB1BC7205D0000CD39 /* libRNBlur.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNSearchBar;
 		};
+		92C14FDA1BC7205D0000CD39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92C14FCB1BC7205D0000CD39 /* RNBlur.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A68BD7BC1BC31318005F02DF;
+			remoteInfo = RNBlur;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +144,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		921F7A7F1BC47FFF008767EB /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
 		9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSearchBar.xcodeproj; path = "../node_modules/react-native-search-bar/RNSearchBar.xcodeproj"; sourceTree = "<group>"; };
+		92C14FCB1BC7205D0000CD39 /* RNBlur.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C14FDD1BC720660000CD39 /* libRNBlur.a in Frameworks */,
 				9221BCD31BC4BE5400E03A4B /* libRNSearchBar.a in Frameworks */,
 				921F7A851BC4816B008767EB /* libRCTCamera.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -267,6 +277,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				92C14FCB1BC7205D0000CD39 /* RNBlur.xcodeproj */,
 				9221BCCD1BC4BE4400E03A4B /* RNSearchBar.xcodeproj */,
 				921F7A7F1BC47FFF008767EB /* RCTCamera.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -323,6 +334,14 @@
 			isa = PBXGroup;
 			children = (
 				9221BCD21BC4BE4500E03A4B /* libRNSearchBar.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92C14FCC1BC7205D0000CD39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92C14FDB1BC7205D0000CD39 /* libRNBlur.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,6 +430,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 92C14FCC1BC7205D0000CD39 /* Products */;
+					ProjectRef = 92C14FCB1BC7205D0000CD39 /* RNBlur.xcodeproj */;
 				},
 				{
 					ProductGroup = 9221BCCE1BC4BE4400E03A4B /* Products */;
@@ -507,6 +530,13 @@
 			fileType = archive.ar;
 			path = libRNSearchBar.a;
 			remoteRef = 9221BCD11BC4BE4500E03A4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92C14FDB1BC7205D0000CD39 /* libRNBlur.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNBlur.a;
+			remoteRef = 92C14FDA1BC7205D0000CD39 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
