@@ -5,14 +5,13 @@ const {
 } = React
 
 const MealList = require('./MealList')
-const MealEntryPage = require('./MealEntryPage')
 
 class App extends Component {
   render() {
     return (
       <Navigator
         initialRoute={{
-          component: MealEntryPage,
+          component: MealList,
         }}
         renderScene={(route, navigator) => {
           return <route.component navigator={navigator} {...route.props}/>
