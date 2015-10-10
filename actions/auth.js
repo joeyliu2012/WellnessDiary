@@ -3,7 +3,6 @@ const { userAndTokenReceived } = require('./users')
 const { RECEIVE_TOKEN } = require('../constants/action-types')
 
 function receiveToken({token: { value }}) {
-  console.log(value)
   return {
     type: RECEIVE_TOKEN,
     payload: value,

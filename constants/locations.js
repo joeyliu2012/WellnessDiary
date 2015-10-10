@@ -1,0 +1,4 @@
+module.exports = {
+  LOCAL: 'PHOTO_LOCATION_LOCAL',
+  REMOTE: 'PHOTO_LOCATION_REMOTE',
+}

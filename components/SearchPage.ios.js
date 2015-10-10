@@ -13,7 +13,7 @@ const SearchBar = require('react-native-search-bar')
 
 const { connect } = require('react-redux/native')
 const { queryUSDADatabase, clearSearch } = require('../actions/search')
-const { addMeal } = require('../actions/meals')
+const { addMealWithPhoto } = require('../actions/meals')
 
 class SearchPage extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class SearchPage extends Component {
       <TouchableOpacity
         style={styles.resultRow}
         onPress={() => {
-          this.props.addMeal(
+          this.props.addMealWithPhoto(
             result.name,
             this.props.image
           )
@@ -100,5 +100,5 @@ const styles = StyleSheet.create({
 
 module.exports = connect(
   (state) => state.search,
-  { queryUSDADatabase, clearSearch, addMeal }
+  { queryUSDADatabase, clearSearch, addMealWithPhoto }
 )(SearchPage)

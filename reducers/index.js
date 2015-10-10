@@ -4,6 +4,7 @@ const requests = require('./requests')
 const users = require('./users')
 const meals = require('./meals')
 const search = require('./search')
+const photos = require('./photos')
 
 
 module.exports = combineReducers({
@@ -12,4 +13,5 @@ module.exports = combineReducers({
   users,
   meals,
   search,
+  photos,
 })

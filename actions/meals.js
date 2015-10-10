@@ -1,18 +1,26 @@
 const uuid = require('an-uuid')
+const { addPhoto } = require('./photos')
 const { ADD_MEAL, EDIT_MEAL, DELETE_MEAL } = require('../constants/action-types')
 
-function addMeal(description, imagePath) {
+function addMeal(description, mealId = uuid(), photoId) {
   return {
     type: ADD_MEAL,
     payload: {
       meal: {
         description,
-        id: uuid(),
-        image: {
-          src: imagePath,
-        },
+        id: mealId,
+        photo: photoId,
       },
     },
+  }
+}
+
+function addMealWithPhoto(description, imagePath) {
+  return (dispatch) => {
+    const photoId = uuid()
+    const mealId = uuid()
+    dispatch(addPhoto(imagePath, photoId, mealId))
+    dispatch(addMeal(description, mealId, photoId))
   }
 }
 
@@ -39,4 +47,5 @@ module.exports = {
   addMeal,
   editMeal,
   deleteMeal,
+  addMealWithPhoto,
 }
