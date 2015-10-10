@@ -7,11 +7,16 @@ const {
   StyleSheet,
   Text,
   TextInput,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
+  Navigator,
 } = React
 
+const { SceneConfigs } = Navigator
+
 const NavigationBar = require('react-native-navbar')
+const NutrientListItem = require('./NutrientListItem')
+const SearchPage = require('./SearchPage')
 
 const { connect } = require('react-redux/native')
 const { addMealWithPhoto } = require('../actions/meals')
@@ -21,9 +26,12 @@ class MealEntryForm extends Component {
     super(props)
     this.state = {
       description: null,
+      nutrients: [],
     }
 
     this.handlePressSave = this.handlePressSave.bind(this)
+    this.handlePressEnterNutrients = this.handlePressEnterNutrients.bind(this)
+    this.handlePressResult = this.handlePressResult.bind(this)
   }
 
   handlePressSave() {
@@ -33,8 +41,25 @@ class MealEntryForm extends Component {
     navigator.pop()
   }
 
+  handlePressEnterNutrients() {
+    this.props.navigator.push({
+      component: SearchPage,
+      sceneConfig: SceneConfigs.FloatFromBottom,
+      props: {
+        onPressResult: this.handlePressResult,
+      },
+    })
+  }
+
+  handlePressResult(result) {
+    this.setState({
+      nutrients: [...this.state.nutrients, result],
+    })
+  }
+
   render() {
     const { image, navigator } = this.props
+    const { nutrients } = this.state
     return (
       <View style={{flex: 1}}>
         <NavigationBar
@@ -57,6 +82,26 @@ class MealEntryForm extends Component {
             source={{uri: image}}
           />
         </TextInput>
+        <View style={styles.nutrientEntry}>
+          <TouchableOpacity
+            onPress={this.handlePressEnterNutrients}
+          >
+            <View style={{
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-between',
+              borderBottomColor: 'grey',
+              borderBottomWidth: 1 / PixelRatio.get(),
+              height: 24,
+            }}>
+              <Text style={{fontWeight: '500'}}>Enter Nutrients</Text>
+              <Text style={{fontWeight: '500'}}>+</Text>
+            </View>
+          </TouchableOpacity>
+          {nutrients.map((nutrient, idx) =>
+            <NutrientListItem key={idx} item={nutrient} />
+          )}
+        </View>
       </View>
     )
   }
@@ -79,6 +124,10 @@ const styles = StyleSheet.create({
   navbar: {
     borderBottomColor: 'grey',
     borderBottomWidth: 1 / PixelRatio.get(),
+  },
+  nutrientEntry: {
+    margin: 4,
+    padding: 6,
   },
 })
 

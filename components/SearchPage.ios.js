@@ -13,7 +13,6 @@ const SearchBar = require('react-native-search-bar')
 
 const { connect } = require('react-redux/native')
 const { queryUSDADatabase, clearSearch } = require('../actions/search')
-const { addMealWithPhoto } = require('../actions/meals')
 
 class SearchPage extends Component {
   constructor(props) {
@@ -48,10 +47,8 @@ class SearchPage extends Component {
       <TouchableOpacity
         style={styles.resultRow}
         onPress={() => {
-          this.props.addMealWithPhoto(
-            result.name,
-            this.props.image
-          )
+          this.props.clearSearch()
+          this.props.onPressResult(result)
           this.props.navigator.pop()
         }}
       >
@@ -65,7 +62,7 @@ class SearchPage extends Component {
 
   render() {
     return (
-      <View style={{paddingTop: 60, flex: 1}}>
+      <View style={{paddingTop: 20, flex: 1}}>
         <SearchBar
           placeholder="Search USDA nutrition database..."
           onSearchButtonPress={this.handleSearchButtonPress}
@@ -100,5 +97,5 @@ const styles = StyleSheet.create({
 
 module.exports = connect(
   (state) => state.search,
-  { queryUSDADatabase, clearSearch, addMealWithPhoto }
+  { queryUSDADatabase, clearSearch }
 )(SearchPage)
