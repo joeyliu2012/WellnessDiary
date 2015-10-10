@@ -56,7 +56,7 @@ class MealList extends Component {
         <ListView
           style={styles.listView}
           dataSource={this.state.dataSource}
-          renderRow={(id) => <MealListItem meal={meals[id]} photo={photos[meals[id].photo]} />}
+          renderRow={(id) => <MealListItem navigator={navigator} meal={meals[id]} photo={photos[meals[id].photo]} />}
         />
       </View>
     )

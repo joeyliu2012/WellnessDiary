@@ -6,15 +6,38 @@ const {
   Text,
   StyleSheet,
   Image,
+  TouchableOpacity,
 } = React
 
+const MealDetailPage = require('./MealDetailPage')
+
 class MealListItem extends Component {
+  constructor(props) {
+    super(props)
+    this.handleMealPress = this.handleMealPress.bind(this)
+  }
+
+  handleMealPress() {
+    const { meal, navigator, photo } = this.props
+    navigator.push({
+      component: MealDetailPage,
+      props: {
+        meal,
+        photo,
+      },
+    })
+  }
+
   render() {
     const { meal, photo } = this.props
     return (
-      <View style={styles.row}>
-        <Text>{meal.description}</Text>
-      </View>
+      <TouchableOpacity
+        onPress={this.handleMealPress}
+      >
+        <View style={styles.row}>
+          <Text>{meal.description}</Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 }
