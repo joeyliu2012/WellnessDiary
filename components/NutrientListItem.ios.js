@@ -20,8 +20,9 @@ class NutrientListItem extends Component {
 
 const styles = StyleSheet.create({
   row: {
-    height: 40,
+    height: 50,
     justifyContent: 'space-around',
+    padding: 6,
     borderBottomColor: 'grey',
     borderBottomWidth: 1 / PixelRatio.get(),
   },

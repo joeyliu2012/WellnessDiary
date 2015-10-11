@@ -35,9 +35,9 @@ class MealEntryForm extends Component {
   }
 
   handlePressSave() {
-    const { description } = this.state
+    const { description, nutrients } = this.state
     const { image, addMealWithPhoto, navigator } = this.props
-    addMealWithPhoto(description, image)
+    addMealWithPhoto(description, nutrients, image)
     navigator.pop()
   }
 
@@ -58,7 +58,7 @@ class MealEntryForm extends Component {
   }
 
   render() {
-    const { image, navigator } = this.props
+    const { image, navigator, foodReports } = this.props
     const { nutrients } = this.state
     return (
       <View style={{flex: 1}}>
@@ -98,8 +98,11 @@ class MealEntryForm extends Component {
               <Text style={{fontWeight: '500'}}>+</Text>
             </View>
           </TouchableOpacity>
-          {nutrients.map((nutrient, idx) =>
-            <NutrientListItem key={idx} item={nutrient} />
+          {nutrients.map((ndbno, idx) => {
+            if (foodReports && foodReports[ndbno]) {
+              return <NutrientListItem key={idx} item={foodReports[ndbno]} />
+            }
+          }
           )}
         </View>
       </View>
@@ -132,6 +135,6 @@ const styles = StyleSheet.create({
 })
 
 module.exports = connect(
-  (state) => ({}),
+  (state) => ({ foodReports: state.usda.foodReports }),
   { addMealWithPhoto }
 )(MealEntryForm)

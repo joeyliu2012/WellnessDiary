@@ -10,9 +10,10 @@ const {
 } = React
 
 const SearchBar = require('react-native-search-bar')
+const NutrientListItem = require('./NutrientListItem')
 
 const { connect } = require('react-redux/native')
-const { queryUSDADatabase, clearSearch } = require('../actions/search')
+const { queryUSDADatabase, fetchFoodReport, clearSearch } = require('../actions/usda')
 
 class SearchPage extends Component {
   constructor(props) {
@@ -43,26 +44,26 @@ class SearchPage extends Component {
   }
 
   renderResultRow(result) {
+    const { clearSearch, onPressResult, fetchFoodReport, navigator } = this.props
     return (
       <TouchableOpacity
-        style={styles.resultRow}
         onPress={() => {
-          this.props.clearSearch()
-          this.props.onPressResult(result)
-          this.props.navigator.pop()
+          clearSearch()
+          fetchFoodReport(result.ndbno)
+          onPressResult(result.ndbno)
+          navigator.pop()
         }}
       >
-        <View>
-          <Text style={styles.resultName}>{result.name}</Text>
-          <Text style={styles.resultGroup}>{result.group}</Text>
-        </View>
+        <NutrientListItem
+          item={result}
+        />
       </TouchableOpacity>
     )
   }
 
   render() {
     return (
-      <View style={{paddingTop: 20, flex: 1}}>
+      <View style={styles.container}>
         <SearchBar
           placeholder="Search USDA nutrition database..."
           onSearchButtonPress={this.handleSearchButtonPress}
@@ -79,23 +80,14 @@ class SearchPage extends Component {
 }
 
 const styles = StyleSheet.create({
-  resultRow: {
-    height: 70,
-    padding: 10,
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    justifyContent: 'center',
-  },
-  resultName: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  resultGroup: {
-    fontSize: 12,
+  container: {
+    flex: 1,
+    paddingTop: 20,
+    backgroundColor: 'white',
   },
 })
 
 module.exports = connect(
-  (state) => state.search,
-  { queryUSDADatabase, clearSearch }
+  (state) => state.usda,
+  { queryUSDADatabase, clearSearch, fetchFoodReport }
 )(SearchPage)

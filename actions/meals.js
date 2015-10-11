@@ -2,12 +2,13 @@ const uuid = require('an-uuid')
 const { addPhoto } = require('./photos')
 const { ADD_MEAL, EDIT_MEAL, DELETE_MEAL } = require('../constants/action-types')
 
-function addMeal(description, mealId = uuid(), photoId) {
+function addMeal(description, foodReports, mealId = uuid(), photoId) {
   return {
     type: ADD_MEAL,
     payload: {
       meal: {
         description,
+        foodReports,
         id: mealId,
         photo: photoId,
       },
@@ -15,12 +16,12 @@ function addMeal(description, mealId = uuid(), photoId) {
   }
 }
 
-function addMealWithPhoto(description, imagePath) {
+function addMealWithPhoto(description, foodReports, imagePath) {
   return (dispatch) => {
     const photoId = uuid()
     const mealId = uuid()
     dispatch(addPhoto(imagePath, photoId, mealId))
-    dispatch(addMeal(description, mealId, photoId))
+    dispatch(addMeal(description, foodReports, mealId, photoId))
   }
 }
 

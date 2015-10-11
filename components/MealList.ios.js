@@ -66,13 +66,11 @@ class MealList extends Component {
 const styles= StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   navbar: {
     borderBottomColor: 'grey',
     borderBottomWidth: 1 / PixelRatio.get(),
-  },
-  listView: {
-    top: -20,
   },
 })
 

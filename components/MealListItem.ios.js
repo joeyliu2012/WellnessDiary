@@ -29,7 +29,7 @@ class MealListItem extends Component {
   }
 
   render() {
-    const { meal, photo } = this.props
+    const { meal } = this.props
     return (
       <TouchableOpacity
         onPress={this.handleMealPress}

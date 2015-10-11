@@ -6,13 +6,25 @@ const {
   PixelRatio,
   Text,
   Image,
+  ListView,
 } = React
 
 const NavigationBar = require('react-native-navbar')
+const FoodReport = require('./FoodReport')
+const { connect } = require('react-redux/native')
 
 class MealDetailPage extends Component {
+  constructor(props) {
+    super(props)
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+    })
+    this.state = {
+      dataSource: ds.cloneWithRows(props.meal.foodReports),
+    }
+  }
   render() {
-    const { navigator, meal, photo } = this.props
+    const { navigator, meal, photo, foodReports } = this.props
     return (
       <View style={styles.container}>
         <NavigationBar
@@ -22,10 +34,17 @@ class MealDetailPage extends Component {
         />
         <Image
           style={styles.image}
-          source={photo}
+          source={photo[photo.location]}
         />
         <View style={styles.mealDetailContainer}>
           <Text>{meal.description}</Text>
+          <ListView
+            style={{flex: 1}}
+            dataSource={this.state.dataSource}
+            renderRow={(reportId) =>
+              <FoodReport report={foodReports[reportId]}/>
+            }
+          />
         </View>
       </View>
     )
@@ -35,6 +54,7 @@ class MealDetailPage extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   mealDetailContainer: {
     padding: 8,
@@ -49,4 +69,6 @@ const styles = StyleSheet.create({
   },
 })
 
-module.exports = MealDetailPage
+module.exports = connect(
+  (state) => ({foodReports: state.usda.foodReports})
+)(MealDetailPage)

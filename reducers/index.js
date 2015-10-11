@@ -3,7 +3,7 @@ const auth = require('./auth')
 const requests = require('./requests')
 const users = require('./users')
 const meals = require('./meals')
-const search = require('./search')
+const usda = require('./usda')
 const photos = require('./photos')
 
 
@@ -12,6 +12,6 @@ module.exports = combineReducers({
   requests,
   users,
   meals,
-  search,
+  usda,
   photos,
 })
