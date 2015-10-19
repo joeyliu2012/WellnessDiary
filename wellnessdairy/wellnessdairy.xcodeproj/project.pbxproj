@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		986555491BD479C5003EBE1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986555481BD479C5003EBE1B /* AppDelegate.swift */; };
+		9865554B1BD479C5003EBE1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865554A1BD479C5003EBE1B /* ViewController.swift */; };
+		9865554E1BD479C5003EBE1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9865554C1BD479C5003EBE1B /* Main.storyboard */; };
+		986555501BD479C5003EBE1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9865554F1BD479C5003EBE1B /* Assets.xcassets */; };
+		986555531BD479C5003EBE1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986555511BD479C5003EBE1B /* LaunchScreen.storyboard */; };
+		9865555E1BD479C5003EBE1B /* wellnessdairyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865555D1BD479C5003EBE1B /* wellnessdairyTests.swift */; };
+		986555691BD479C5003EBE1B /* wellnessdairyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986555681BD479C5003EBE1B /* wellnessdairyUITests.swift */; };
+		9865557B1BD48132003EBE1B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865557A1BD48132003EBE1B /* AudioToolbox.framework */; };
+		9865557D1BD48142003EBE1B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865557C1BD48142003EBE1B /* CFNetwork.framework */; };
+		9865557F1BD48158003EBE1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865557E1BD48158003EBE1B /* CoreGraphics.framework */; };
+		986555811BD48162003EBE1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986555801BD48162003EBE1B /* CoreLocation.framework */; };
+		986555831BD4816C003EBE1B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986555821BD4816C003EBE1B /* QuartzCore.framework */; };
+		986555851BD4817E003EBE1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986555841BD4817E003EBE1B /* Security.framework */; };
+		986555871BD4818A003EBE1B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986555861BD4818A003EBE1B /* StoreKit.framework */; };
+		986555891BD48196003EBE1B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986555881BD48196003EBE1B /* SystemConfiguration.framework */; };
+		9865558B1BD4819F003EBE1B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865558A1BD4819F003EBE1B /* libz.tbd */; };
+		9865558D1BD481A8003EBE1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865558C1BD481A8003EBE1B /* libsqlite3.tbd */; };
+		986555901BD486EA003EBE1B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865558E1BD486E9003EBE1B /* Bolts.framework */; };
+		986555911BD486EA003EBE1B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865558F1BD486E9003EBE1B /* Parse.framework */; };
+		986555931BD49350003EBE1B /* meal entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986555921BD49350003EBE1B /* meal entry.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9865555A1BD479C5003EBE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9865553D1BD479C5003EBE1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 986555441BD479C5003EBE1B;
+			remoteInfo = wellnessdairy;
+		};
+		986555651BD479C5003EBE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9865553D1BD479C5003EBE1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 986555441BD479C5003EBE1B;
+			remoteInfo = wellnessdairy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		986555451BD479C5003EBE1B /* wellnessdairy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wellnessdairy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		986555481BD479C5003EBE1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9865554A1BD479C5003EBE1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9865554D1BD479C5003EBE1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9865554F1BD479C5003EBE1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		986555521BD479C5003EBE1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		986555541BD479C5003EBE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986555591BD479C5003EBE1B /* wellnessdairyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wellnessdairyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9865555D1BD479C5003EBE1B /* wellnessdairyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wellnessdairyTests.swift; sourceTree = "<group>"; };
+		9865555F1BD479C5003EBE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986555641BD479C5003EBE1B /* wellnessdairyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wellnessdairyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		986555681BD479C5003EBE1B /* wellnessdairyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wellnessdairyUITests.swift; sourceTree = "<group>"; };
+		9865556A1BD479C5003EBE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9865557A1BD48132003EBE1B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9865557C1BD48142003EBE1B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9865557E1BD48158003EBE1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		986555801BD48162003EBE1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		986555821BD4816C003EBE1B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		986555841BD4817E003EBE1B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		986555861BD4818A003EBE1B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		986555881BD48196003EBE1B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9865558A1BD4819F003EBE1B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9865558C1BD481A8003EBE1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9865558E1BD486E9003EBE1B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9865558F1BD486E9003EBE1B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		986555921BD49350003EBE1B /* meal entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "meal entry.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		986555421BD479C5003EBE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9865558D1BD481A8003EBE1B /* libsqlite3.tbd in Frameworks */,
+				9865558B1BD4819F003EBE1B /* libz.tbd in Frameworks */,
+				986555891BD48196003EBE1B /* SystemConfiguration.framework in Frameworks */,
+				986555871BD4818A003EBE1B /* StoreKit.framework in Frameworks */,
+				986555851BD4817E003EBE1B /* Security.framework in Frameworks */,
+				986555831BD4816C003EBE1B /* QuartzCore.framework in Frameworks */,
+				986555811BD48162003EBE1B /* CoreLocation.framework in Frameworks */,
+				9865557F1BD48158003EBE1B /* CoreGraphics.framework in Frameworks */,
+				986555901BD486EA003EBE1B /* Bolts.framework in Frameworks */,
+				9865557D1BD48142003EBE1B /* CFNetwork.framework in Frameworks */,
+				986555911BD486EA003EBE1B /* Parse.framework in Frameworks */,
+				9865557B1BD48132003EBE1B /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555561BD479C5003EBE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555611BD479C5003EBE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9865553C1BD479C5003EBE1B = {
+			isa = PBXGroup;
+			children = (
+				986555471BD479C5003EBE1B /* wellnessdairy */,
+				9865555C1BD479C5003EBE1B /* wellnessdairyTests */,
+				986555671BD479C5003EBE1B /* wellnessdairyUITests */,
+				986555461BD479C5003EBE1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		986555461BD479C5003EBE1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				986555451BD479C5003EBE1B /* wellnessdairy.app */,
+				986555591BD479C5003EBE1B /* wellnessdairyTests.xctest */,
+				986555641BD479C5003EBE1B /* wellnessdairyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		986555471BD479C5003EBE1B /* wellnessdairy */ = {
+			isa = PBXGroup;
+			children = (
+				9865558E1BD486E9003EBE1B /* Bolts.framework */,
+				9865558F1BD486E9003EBE1B /* Parse.framework */,
+				9865558C1BD481A8003EBE1B /* libsqlite3.tbd */,
+				9865558A1BD4819F003EBE1B /* libz.tbd */,
+				986555881BD48196003EBE1B /* SystemConfiguration.framework */,
+				986555861BD4818A003EBE1B /* StoreKit.framework */,
+				986555841BD4817E003EBE1B /* Security.framework */,
+				986555821BD4816C003EBE1B /* QuartzCore.framework */,
+				986555801BD48162003EBE1B /* CoreLocation.framework */,
+				9865557E1BD48158003EBE1B /* CoreGraphics.framework */,
+				9865557C1BD48142003EBE1B /* CFNetwork.framework */,
+				9865557A1BD48132003EBE1B /* AudioToolbox.framework */,
+				986555481BD479C5003EBE1B /* AppDelegate.swift */,
+				986555921BD49350003EBE1B /* meal entry.swift */,
+				9865554A1BD479C5003EBE1B /* ViewController.swift */,
+				9865554C1BD479C5003EBE1B /* Main.storyboard */,
+				9865554F1BD479C5003EBE1B /* Assets.xcassets */,
+				986555511BD479C5003EBE1B /* LaunchScreen.storyboard */,
+				986555541BD479C5003EBE1B /* Info.plist */,
+			);
+			path = wellnessdairy;
+			sourceTree = "<group>";
+		};
+		9865555C1BD479C5003EBE1B /* wellnessdairyTests */ = {
+			isa = PBXGroup;
+			children = (
+				9865555D1BD479C5003EBE1B /* wellnessdairyTests.swift */,
+				9865555F1BD479C5003EBE1B /* Info.plist */,
+			);
+			path = wellnessdairyTests;
+			sourceTree = "<group>";
+		};
+		986555671BD479C5003EBE1B /* wellnessdairyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				986555681BD479C5003EBE1B /* wellnessdairyUITests.swift */,
+				9865556A1BD479C5003EBE1B /* Info.plist */,
+			);
+			path = wellnessdairyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		986555441BD479C5003EBE1B /* wellnessdairy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9865556D1BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairy" */;
+			buildPhases = (
+				986555411BD479C5003EBE1B /* Sources */,
+				986555421BD479C5003EBE1B /* Frameworks */,
+				986555431BD479C5003EBE1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wellnessdairy;
+			productName = wellnessdairy;
+			productReference = 986555451BD479C5003EBE1B /* wellnessdairy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		986555581BD479C5003EBE1B /* wellnessdairyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986555701BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairyTests" */;
+			buildPhases = (
+				986555551BD479C5003EBE1B /* Sources */,
+				986555561BD479C5003EBE1B /* Frameworks */,
+				986555571BD479C5003EBE1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9865555B1BD479C5003EBE1B /* PBXTargetDependency */,
+			);
+			name = wellnessdairyTests;
+			productName = wellnessdairyTests;
+			productReference = 986555591BD479C5003EBE1B /* wellnessdairyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		986555631BD479C5003EBE1B /* wellnessdairyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986555731BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairyUITests" */;
+			buildPhases = (
+				986555601BD479C5003EBE1B /* Sources */,
+				986555611BD479C5003EBE1B /* Frameworks */,
+				986555621BD479C5003EBE1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				986555661BD479C5003EBE1B /* PBXTargetDependency */,
+			);
+			name = wellnessdairyUITests;
+			productName = wellnessdairyUITests;
+			productReference = 986555641BD479C5003EBE1B /* wellnessdairyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9865553D1BD479C5003EBE1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "yujia liu";
+				TargetAttributes = {
+					986555441BD479C5003EBE1B = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 5GNTHRQY59;
+					};
+					986555581BD479C5003EBE1B = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 986555441BD479C5003EBE1B;
+					};
+					986555631BD479C5003EBE1B = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 986555441BD479C5003EBE1B;
+					};
+				};
+			};
+			buildConfigurationList = 986555401BD479C5003EBE1B /* Build configuration list for PBXProject "wellnessdairy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9865553C1BD479C5003EBE1B;
+			productRefGroup = 986555461BD479C5003EBE1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				986555441BD479C5003EBE1B /* wellnessdairy */,
+				986555581BD479C5003EBE1B /* wellnessdairyTests */,
+				986555631BD479C5003EBE1B /* wellnessdairyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		986555431BD479C5003EBE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986555531BD479C5003EBE1B /* LaunchScreen.storyboard in Resources */,
+				986555501BD479C5003EBE1B /* Assets.xcassets in Resources */,
+				9865554E1BD479C5003EBE1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555571BD479C5003EBE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555621BD479C5003EBE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		986555411BD479C5003EBE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9865554B1BD479C5003EBE1B /* ViewController.swift in Sources */,
+				986555491BD479C5003EBE1B /* AppDelegate.swift in Sources */,
+				986555931BD49350003EBE1B /* meal entry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555551BD479C5003EBE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9865555E1BD479C5003EBE1B /* wellnessdairyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986555601BD479C5003EBE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986555691BD479C5003EBE1B /* wellnessdairyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9865555B1BD479C5003EBE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 986555441BD479C5003EBE1B /* wellnessdairy */;
+			targetProxy = 9865555A1BD479C5003EBE1B /* PBXContainerItemProxy */;
+		};
+		986555661BD479C5003EBE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 986555441BD479C5003EBE1B /* wellnessdairy */;
+			targetProxy = 986555651BD479C5003EBE1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9865554C1BD479C5003EBE1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9865554D1BD479C5003EBE1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		986555511BD479C5003EBE1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				986555521BD479C5003EBE1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9865556B1BD479C5003EBE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9865556C1BD479C5003EBE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9865556E1BD479C5003EBE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wellnessdairy",
+				);
+				INFOPLIST_FILE = wellnessdairy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9865556F1BD479C5003EBE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wellnessdairy",
+				);
+				INFOPLIST_FILE = wellnessdairy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		986555711BD479C5003EBE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wellnessdairyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wellnessdairy.app/wellnessdairy";
+			};
+			name = Debug;
+		};
+		986555721BD479C5003EBE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wellnessdairyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wellnessdairy.app/wellnessdairy";
+			};
+			name = Release;
+		};
+		986555741BD479C5003EBE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wellnessdairyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wellnessdairy;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		986555751BD479C5003EBE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wellnessdairyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yujiaLiu.wellnessdairyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wellnessdairy;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		986555401BD479C5003EBE1B /* Build configuration list for PBXProject "wellnessdairy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9865556B1BD479C5003EBE1B /* Debug */,
+				9865556C1BD479C5003EBE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9865556D1BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9865556E1BD479C5003EBE1B /* Debug */,
+				9865556F1BD479C5003EBE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986555701BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986555711BD479C5003EBE1B /* Debug */,
+				986555721BD479C5003EBE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986555731BD479C5003EBE1B /* Build configuration list for PBXNativeTarget "wellnessdairyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986555741BD479C5003EBE1B /* Debug */,
+				986555751BD479C5003EBE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9865553D1BD479C5003EBE1B /* Project object */;
+}
